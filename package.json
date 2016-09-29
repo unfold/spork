@@ -1,0 +1,42 @@
+{
+  "name": "spork",
+  "description": "Spork",
+  "version": "1.0.0",
+  "repository": "unfold/spork",
+  "scripts": {
+    "lint": "eslint src",
+    "lint:staged": "staged-files '**/*.js' -- $(npm bin)/eslint",
+    "test": "npm run lint",
+    "start": "node -r babel-register -r config-variables src"
+  },
+  "author": "Unfold",
+  "license": "UNLICENSED",
+  "pre-commit": {
+    "run": "lint:staged",
+    "silent": true
+  },
+  "dependencies": {
+    "babel-core": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "babel-runtime": "^6.9.2",
+    "body-parser": "^1.15.2",
+    "chalk": "^1.1.3",
+    "config-variables": "^1.0.0",
+    "express": "^4.13.4",
+    "lodash": "^4.13.1",
+    "node-fetch": "^1.6.3",
+    "qs": "^6.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.0.0",
+    "babel-register": "^6.16.0",
+    "eslint": "^3.6.1",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.2",
+    "eslint-plugin-react": "^6.3.0",
+    "pre-commit": "^1.1.3",
+    "staged-files": "^0.1.2"
+  }
+}
